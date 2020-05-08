@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATION</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'regdesigner.css' %}">
+	<script src="https://kit.fontawesome.com/67dfcfef99.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h2>We  are  hiring <i class="fas fa-bullhorn">....</i></h2>
+	<div class=reg>
+		
+		<form id="reg" method="post" action="...php">
+		<h1>Register here</h1>
+		<label>Fist Name : </label><br>
+		<input type="text" name="name" placeholder="First name" required/ id="name"><br><br>
+		<label>Last Name : </label><br>
+		<input type="text" name="name" placeholder="Last name" required/ id="name"><br><br>
+		<label>Email : </label><br>
+		<input type="email" name="email" placeholder="Enter mail id" required/ id="name"><br><br>
+		<label>Address : </label><br>
+		<input type="text&Number" name="addr" placeholder="Enter address" required/id="name"><br><br>
+		<label>Mobile : </label><br>
+		<input type="number" name="num" placeholder="Enter Mobile number"required/ id="name"><br><br>
+		<input type="checkbox"required/ id="ch"><span id="ch">Please mail your resume to <a href="https://gmail.com">interiordesign@gmail.com</a> </span><br><br>
+		<button type="submit" id="sub">Register here</button>
+</form>
+	</div>
+
+</body>
+</html>

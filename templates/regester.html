@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Regester</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'loginstyle.css' %}">
+</head>
+<body>
+       <div class="box">
+       	  <div class="inner-box">
+
+       	  	<form action="regester" method="POST">
+					 {% csrf_token %}
+					
+					 <h2>Signup Now</h2>
+				
+					
+					 First Name<input type="text" name="first_name" placeholder="" required/><br>
+					 last_name<input type="text" name="last_name" placeholder="" ><br>
+					 Username <input type="text" name="username" placeholder="" required/><br>
+					 email	  <input type="email" name="email" placeholder="" required/><br>
+					 
+					 
+					 Password<input type="password" name="password1"  placeholder="" required/><br>
+					 Confirm Password<input type="password" name="password2" placeholder="" required/><br>
+							
+							  
+					 <input type="submit" value="Signup" >
+					 
+       	  		
+       	  		             <p style="text-align: center;">
+             	<span>Already Regestered?</span> <a class="link" href="login">Login</a>
+       	  	</form>
+       	  	<div>
+					 {%for message in messages%}
+					 <h3>{{message}}</h3>
+					 {% endfor %}
+				 </div>
+
+       	  </div>
+       	
+
+       </div>
+  
+</body>
+</html>
