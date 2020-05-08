@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href=" {% static 'style.css' %}">
+	<script src="https://kit.fontawesome.com/67dfcfef99.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bgimage">
+	<div class="menu">
+<div class="leftmenu">
+	<h4>Interior design</h4>
+</div>
+<nav>
+	<ul>
+       <li id="firstlist">Home</li>
+       <li><a href="#">Services <i class="fas fa-chevron-circle-down"></i></a>
+       	   <ul>
+       	   	<li><a href='livingroom'>Living Room Interiors<a></li>
+       	   	<li><a href='kitchen'> Modular Kitchen</a></li> 
+       	   	<li><a href='bedroom'>Bedroom Interiors</a></li>	
+       	   </ul>
+       	</li>
+		   <li><a href='price'>Price list</a></li>
+		   <li><a href='testi'>Testimonials </a></li>
+		   <li><a href='about'>About us</a></li>
+		  
+		  
+		
+		
+</nav>
+</div>
+	<div class="text">
+		<h4>Interior designing</h4>
+		<h1>Creative & Experienced</h1>
+		<h3>WE ARE  ONE OF THE BEST INERIOR DESIGN COMPANY</h3>
+		{% if user.is_authenticated %}
+		<li><h4>Hello,{{user.first_name}}</h4></li>
+		<button onclick="location.href='logout'" id="buttonone">logout</a></button>
+		 {% else %}
+		<button onclick="location.href='login'" id="buttonone">login</a></button>
+		{% endif %}
+		<button id="buttontwo"><a href='regidesigner'>Join as designer </a></button>
+		
+		
+	</div>
+</div>
+</body>
+</html>
