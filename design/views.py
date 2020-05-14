@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from design.models import Bookingdetails
 
 
 # Create your views here.
@@ -28,6 +29,9 @@ def testi(request):
 
 def regidesigner(request):
     return render(request,"regidesigner.html")
+
+def thanks(request):
+    return render(request,"thanks.html")    
 
 def login(request):
     if request.method=='POST':
@@ -80,6 +84,31 @@ def logout(request):
     auth.logout(request)
     return redirect('/')        
                  
+        
+def booking(request):
+    if request.method== 'POST':
+        first_name = request.POST['first_name']
+        user_name = request.POST['user_name']
+        phone_no = request.POST['phone_no']
+        address1 = request.POST['address1']
+
+        paymode = request.POST['paymode']
+        cc_name = request.POST['cc_name'] 
+        cc_number = request.POST['cc_number']
+        cc_experation = request.POST['cc_expiration']
+        cc_cvv = request.POST['cc_cvv'] 
+
+        user1=Bookingdetails.objects.create(first_name=first_name,user_name=user_name,phone_no=phone_no,address1=address1,paymode=paymode,cc_name=cc_name,cc_experation=cc_experation,
+        cc_number=cc_number,cc_cvv=cc_cvv)
+        user1.save() 
+        return redirect('thanks')   
+    else:
+        return render(request,'booking.html')
+
+
+
+
+
         
         
 
